@@ -103,16 +103,6 @@ const CHARS: &[char] = &[
 pub const RENDEZVOUS_SERVERS: &[&str] = &["vpn.arbor.de"];
 pub const RS_PUB_KEY: &str = "c+Dbf4mo9Jy3L7aexa5EaBUbIWOM2Ln9yV8xev7DV7M=";
 
-pub const PROD_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new(match option_env!("RENDEZVOUS_SERVER") {
-    Some(key) if !key.is_empty() => key,
-    _ => "",
-}.to_owned());
-
-pub const RS_PUB_KEY: &str = match option_env!("RS_PUB_KEY") {
-    Some(key) if !key.is_empty() => key,
-    _ => PUBLIC_RS_PUB_KEY,
-};
-
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;
 pub const WS_RENDEZVOUS_PORT: i32 = 21118;
